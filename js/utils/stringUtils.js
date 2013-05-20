@@ -1,8 +1,6 @@
-define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dojo/topic"], function(declare, array, lang, query, dom, domClass, construct, topic) {
+define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/query", "dojo/dom", "dojo/dom-class", "dojo/dom-construct", "dojo/topic", "dojo/currency"], function(declare, array, lang, query, dom, domClass, construct, topic, dcurrency) {
 
-    return declare(null,
-    {
-
+    var stringUtils = {
         pluralSingular: function(coefficientNumber, singularTerm, pluralTerm) {
 			if (coefficientNumber == 1) {
                 return singularTerm;
@@ -30,7 +28,12 @@ define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/query
             return fundsText;
         }
 
-    });
+    };
+
+    // has("extend-dojo") && lang.mixin(dojo, string);
+
+    return stringUtils;
+
 });
 
 
